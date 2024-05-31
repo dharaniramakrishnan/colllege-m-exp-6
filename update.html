@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update</title>
+<style>
+.cont{
+    background-color: rgba(245, 245, 220, 0.6);
+    margin: 4rem auto;
+    max-width: 16rem;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 11%;
+    justify-content: center;
+    align-items: center;
+   
+}
+button{
+    margin: 1rem;
+    width: 6rem;
+    height: 3rem;
+    border-radius: 2rem;
+}
+.nm{
+    padding: 1rem;
+}
+.rn{
+    padding: 1 rem;
+}
+.ph{
+    padding: 1rem;
+}
+.em{
+    padding: 1rem;
+}
+body{
+    max-height: max-content;
+    background: url('https://c0.wallpaperflare.com/preview/389/615/630/business-businessman-communication-concept.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+
+
+}
+h1{
+    text-align: center;
+    font-style: italic;
+}
+input[type="text"]{
+    width: 12rem;
+    height: 2.5rem;
+    justify-content: center;
+}
+input[type="number"]{
+    width: 12rem;
+    height: 2.5rem;
+    justify-content: center;
+}
+input[type="email"]{
+    width: 12rem;
+    height: 2.5rem;
+    justify-content: center;
+}
+</style>
+
+</head>
+<body>
+    
+    <div class="cont">
+        <h1>Update</h1>
+        <form id="ab" method="post">
+            
+            <div class="nm">
+            <label for="">Name</label><br>
+            <input type="text" name="name" ><br>
+            </div>
+            <div class="rn">
+                <label for="">Roll NO</label><br>
+                <input type="text" name="rollno" ><br>
+                </div>
+                
+            
+            <div class="ph">
+            <label for="">Mobile</label><br>
+            <input type="number" maxlength="10" name="num" ><br>
+            </div>
+            
+            <div class="em">
+            <label for="">Email</label><br>
+            <input type="email" name="mail" ><br>
+            </div>
+            
+            <button type="submit" >Insert</button><br>
+            <a href="/report">Generate Report</a>
+        </form>
+    </div>
+    <script>
+        const pathname = window.location.pathname;
+        const pathParts = pathname.split('/');
+        const lastPart = pathParts[pathParts.length - 1];
+
+        // Set the action attribute of the form
+        const form = document.getElementById("ab");
+        form.setAttribute('action', 'http://localhost:5000/update/'+lastPart);
+    </script>
+</body>
+</html>
